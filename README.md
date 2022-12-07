@@ -12,3 +12,7 @@ to your favorites bar. These links contains the code in JavaScript
 history.
 
 The source code can be found in the `script.js` file in this repository.
+
+## Contributions
+
+Pull requests are welcome and I thank you a lot for your help!
