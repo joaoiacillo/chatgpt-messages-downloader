@@ -16,7 +16,7 @@
             "You must execute this in ChatGPT website: https://chat.openai.com/chat"
         );
 
-    const download_type = "json"; // Change this to "json" if you want to download as JSON file.
+    const download_type = "text"; // Change this to "json" if you want to download as JSON file.
     const blob_types = {
         text: "text/plain",
         json: "text/json",
