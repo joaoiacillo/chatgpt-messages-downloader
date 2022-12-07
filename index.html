@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ChatGPT Messages Downloader</title>
+    </head>
+    <body>
+        <h1>ChatGPT Messages Downloader</h1>
+        <p>Favorite the links above:</p>
+        <ul>
+            <li>
+                For downloading text files:
+                <a
+                    href="javascript:!function(){if(!/chat\.openai\.com\/.*/.test(location.href))return alert('You must execute this in ChatGPT website: https://chat.openai.com/chat');const e='text',t={text:'text/plain',json:'text/json'};if(!(e in t))return alert(`Oh oh. It seems we ran into some trouble: The download type '${e}' provided is not correct. :(\n\nPlease visit the project's repository on GitHub and favorite one of the links provided.\n\nIf you feel that everything is correct, please report this to the creator: joaopiacillo@outlook.com.br`);const o=[...document.querySelector('#__next > div > div.flex.flex-1.flex-col.md\\:pl-52.h-full > main > div.flex-1.overflow-hidden > div > div > div').children];o.pop();var n,i,r=[];for(let e of o){const t=e.querySelector('div > div:nth-child(2) > div').textContent,o=e.children[0].firstChild.firstChild.classList.length>2?'AI':'User';r.push({sender:o,content:t})}switch(e){case'text':i='txt',n=r.map((({sender:e,content:t})=>`${e}: ${t}`)).join('\n');break;case'json':i='json',n=JSON.stringify(r,null,4)}const c=new Blob([n],{type:t[e]}),l=URL.createObjectURL(c),s=document.createElement('a');s.href=l,s.download=`ChatGPT_Dump_${(new Date).getTime()}.${i}`,s.style.display='none',s.click(),s.remove(),URL.revokeObjectURL(l)}();"
+                ></a>
+            </li>
+            <li>
+                For downloading json files:
+                <a
+                    href="javascript:!function(){if(!/chat\.openai\.com\/.*/.test(location.href))return alert('You must execute this in ChatGPT website: https://chat.openai.com/chat');const e='json',t={text:'text/plain',json:'text/json'};if(!(e in t))return alert(`Oh oh. It seems we ran into some trouble: The download type '${e}' provided is not correct. :(\n\nPlease visit the project's repository on GitHub and favorite one of the links provided.\n\nIf you feel that everything is correct, please report this to the creator: joaopiacillo@outlook.com.br`);const o=[...document.querySelector('#__next > div > div.flex.flex-1.flex-col.md\\:pl-52.h-full > main > div.flex-1.overflow-hidden > div > div > div').children];o.pop();var n,i,r=[];for(let e of o){const t=e.querySelector('div > div:nth-child(2) > div').textContent,o=e.children[0].firstChild.firstChild.classList.length>2?'AI':'User';r.push({sender:o,content:t})}switch(e){case'text':i='txt',n=r.map((({sender:e,content:t})=>`${e}: ${t}`)).join('\n');break;case'json':i='json',n=JSON.stringify(r,null,4)}const s=new Blob([n],{type:t[e]}),c=URL.createObjectURL(s),l=document.createElement('a');l.href=c,l.download=`ChatGPT_Dump_${(new Date).getTime()}.${i}`,l.style.display='none',l.click(),l.remove(),URL.revokeObjectURL(c)}();"
+                ></a>
+            </li>
+        </ul>
+    </body>
+</html>
