@@ -5,25 +5,231 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ChatGPT Messages Downloader</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                flex-direction: column;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            p {
+                font-size: 20px;
+                margin: 8px 0;
+                max-width: 800px;
+                width: 100%;
+                text-align: justify;
+            }
+
+            img {
+                margin: 50px 0;
+            }
+
+            ul {
+                max-width: 800px;
+                width: 100%;
+                text-align: left;
+            }
+
+            hr {
+                width: 10vw;
+                opacity: 30%;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .code-block {
+                max-width: 700px;
+                width: 100%;
+                text-align: left;
+                margin: 30px;
+                border: dashed 1px rgba(0 0 0 / 25%);
+                background-color: rgba(0 0 0 / 5%);
+                padding: 15px;
+            }
+
+            kbd {
+                background-color: rgba(255 0 0 / 10%);
+                padding: 5px 15px;
+                font-family: monospace;
+                border: dashed 1px rgba(0 0 0 / 15%);
+                margin: 0 5px;
+                border-radius: 10px;
+            }
+        </style>
     </head>
     <body>
         <h1>ChatGPT Messages Downloader</h1>
-        <p>Favorite the links above:</p>
+        <p class="center">
+            Hey! Welcome to the official website of the repository!
+        </p>
+        <p class="center">It is pretty easy to continue, I promise!</p>
+
+        <hr />
+
+        <h2>Usage</h2>
+        <p>
+            Whenever you're ready to use it, drag this link:
+            <a
+                id="link"
+                href="javascript:!function(){if(!/chat\.openai\.com\/.*/.test(location.href))return alert('Oh oh. Sorry but this script can only be executed in ChatGPT: https://chat.openai.com/chat');let e=['Text','JSON','CSV'],t='chat-gpt-messages-downloader-interface';if(!document.getElementById(t)){var n=function n(){var o=document.createElement('div');o.id=t,r({position:'absolute',right:'30px',bottom:'0',height:'100%',maxHeight:'320px',minHeight:'320px',width:'100%',maxWidth:'335px',backgroundColor:'#202123',borderRadius:'10px 10px 0 0',overflow:'hidden'},o.style);var i=document.createElement('div');r({width:'100%',height:'48px',backgroundColor:'#343541',display:'flex',justifyContent:'space-between',alignItems:'center',color:'white',fontWeight:'bold',fontSize:'16px',boxShadow:'0 4px 4px rgba(0 0 0 / 25%)'},i.style);var l=document.createElement('p');l.textContent='Download Messages',l.style.marginLeft='15px';var p=document.createElement('button');function c(e,t){var n=document.createElement('div');r({display:'flex',paddingRight:'15px',paddingLeft:'15px',alignItems:'center',color:'white'},n.style);var o,i,a,d=document.createElement('span');d.textContent=e,r({fontWeight:'bold',fontSize:'16px',width:'90px'},d.style);var l=(o=t,r({paddingLeft:'15px',fontWeight:'normal',fontSize:'16px',backgroundColor:'#444654',boxShadow:'0 4px 4px rgba(0 0 0 / 25%)',border:'none',borderRadius:'10px'},(i=document.createElement('select')).style),a=o.map(e=>{var t,n;return t=e,(n=document.createElement('option')).textContent=t,n}),i.append(...a),i);return l.style.flex='1',n.append(d,l),n}p.textContent='X',r({width:'48px',height:'48px',backgroundColor:'#444654',display:'grid',placeItems:'center'},p.style),p.addEventListener('click',()=>o.remove()),i.append(l,p);var s=document.createElement('div');s.style.paddingTop='15px',s.style.marginBottom='30px';var x=c('File Type',e);x.style.marginBottom='30px';var h=c('Targets',['User + AI','User','AI',]);function f(e){var t=document.createElement('button');return t.textContent=e,r({width:'137px',backgroundColor:'#343541',border:'solid 2px #444654',fontSize:'14px',fontWeight:'bold',boxShadow:'0 4px 4px rgba(0 0 0 / 25%)',padding:'5px',color:'white',borderRadius:'10px'},t.style),t}s.append(x,h);var u=document.createElement('div');function v(e){e(x.children[1].value,h.children[1].value)}r({display:'flex',justifyContent:'space-between',paddingLeft:'15px',paddingRight:'15px'},u.style);var g=f('Download');g.addEventListener('click',()=>v(a));var m=f('Copy to Clipboard');return m.addEventListener('click',()=>v(d)),u.append(g,m),o.append(i,s,u),o}();document.body.append(n),window.interface=n}function r(e,t){for(let n in e){var r=e[n];t[n]=r}return t}function o(e){let t=document.querySelector('#__next > div > div.flex.flex-1.flex-col.md\\:pl-52.h-full > main > div.flex-1.overflow-hidden > div > div > div'),n=[...t.children];n.pop();var r=[];for(let o=0;o<n.length;o++){var i=n[o];let a=i.querySelector('div > div:nth-child(2) > div').textContent,d=i.children[0].firstChild.firstChild,l=d.classList.length>2,p=l?'AI':'User';e.includes(p)&&r.push({index:o,sender:p,content:a})}return r}function i(e,t){var n,r,o;switch(e){case'JSON':return JSON.stringify(n=t,null,4);case'CSV':return'Index, Sender, Message\n'+(r=t).map(({sender:e,content:t},n)=>`${n}, ${e}, '${t}'`).join('\n');default:return(o=t).map(({sender:e,content:t})=>`${e}: ${t}`).join('\n')}}function a(e,t){var n=o(t),r=i(e,n),a='Text'==e?'txt':e.toLowerCase(),d=new Blob([r],{type:'text/'+a}),l=URL.createObjectURL(d),p=document.createElement('a');p.href=l,p.download=`ChatGPT_Dump_${new Date().getTime()}.${a}`,p.style.display='none',p.click(),p.remove(),URL.revokeObjectURL(l)}function d(e,t){var n=o(t),r=i(e,n);navigator.clipboard.writeText(r).then(()=>alert('The content was copied to your clipboard.')).catch(()=>alert('It wasn\'t possible to copy to your clipboard.'))}}();"
+            >
+                Open ChatGPT Download Window</a
+            >
+            to your favorites bar (below your browser's search box) and edit it
+            with the name you want.
+        </p>
+        <p>
+            Once you've done that, go to
+            <a href="https://chat.openai.com">ChatGPT</a> and click on the link
+            you just saved. If it took longer than expected to open (which is
+            normally fast), open the browser's console to see if there are any
+            errors. If there aren't any, retry the action mentioned by the
+            paragraph above.
+        </p>
+        <p class="center">
+            <strong>
+                If the error persists, please contact me ASAP:
+                <address>joaopiacillo@outlook.com.br</address>
+            </strong>
+        </p>
+        <p>
+            If everything went ok, you'll be seeing a small dark box at the
+            bottom of your screen. That is your download interface where you can
+            select the <em>file type</em> and the <em>targets</em> to download.
+        </p>
+
+        <img src="imgs/download_interface.jpg" alt="" />
+
+        <p>
+            The <strong>file type</strong> is the extension your file will be
+            saved and the way your content will be structured. There are by now
+            three types of file, and all of them can be either downloaded or
+            copied to the clipboard:
+        </p>
+        <ul>
+            <li>Text (.txt)</li>
+            <li>JSON (.json)</li>
+            <li>CSV (.csv)</li>
+        </ul>
+
+        <p>
+            The <strong>targets</strong> are the message's sender that the
+            downloader will aim for. Only the target listed in it will have it's
+            messages available to download. There are three of them:
+        </p>
         <ul>
             <li>
-                For downloading text files:
-                <a
-                    href="javascript:!function(){if(!/chat\.openai\.com\/.*/.test(location.href))return alert('You must execute this in ChatGPT website: https://chat.openai.com/chat');const e='text',t={text:'text/plain',json:'text/json'};if(!(e in t))return alert(`Oh oh. It seems we ran into some trouble: The download type '${e}' provided is not correct. :(\n\nPlease visit the project's repository on GitHub and favorite one of the links provided.\n\nIf you feel that everything is correct, please report this to the creator: joaopiacillo@outlook.com.br`);const o=[...document.querySelector('#__next > div > div.flex.flex-1.flex-col.md\\:pl-52.h-full > main > div.flex-1.overflow-hidden > div > div > div').children];o.pop();var n,i,r=[];for(let e of o){const t=e.querySelector('div > div:nth-child(2) > div').textContent,o=e.children[0].firstChild.firstChild.classList.length>2?'AI':'User';r.push({sender:o,content:t})}switch(e){case'text':i='txt',n=r.map((({sender:e,content:t})=>`${e}: ${t}`)).join('\n');break;case'json':i='json',n=JSON.stringify(r,null,4)}const c=new Blob([n],{type:t[e]}),l=URL.createObjectURL(c),s=document.createElement('a');s.href=l,s.download=`ChatGPT_Dump_${(new Date).getTime()}.${i}`,s.style.display='none',s.click(),s.remove(),URL.revokeObjectURL(l)}();"
-                    >Save GPTChat as Text</a
-                >
+                User + AI: All of the messages are downloaded. No exceptions.
             </li>
-            <li>
-                For downloading json files:
-                <a
-                    href="javascript:!function(){if(!/chat\.openai\.com\/.*/.test(location.href))return alert('You must execute this in ChatGPT website: https://chat.openai.com/chat');const e='json',t={text:'text/plain',json:'text/json'};if(!(e in t))return alert(`Oh oh. It seems we ran into some trouble: The download type '${e}' provided is not correct. :(\n\nPlease visit the project's repository on GitHub and favorite one of the links provided.\n\nIf you feel that everything is correct, please report this to the creator: joaopiacillo@outlook.com.br`);const o=[...document.querySelector('#__next > div > div.flex.flex-1.flex-col.md\\:pl-52.h-full > main > div.flex-1.overflow-hidden > div > div > div').children];o.pop();var n,i,r=[];for(let e of o){const t=e.querySelector('div > div:nth-child(2) > div').textContent,o=e.children[0].firstChild.firstChild.classList.length>2?'AI':'User';r.push({sender:o,content:t})}switch(e){case'text':i='txt',n=r.map((({sender:e,content:t})=>`${e}: ${t}`)).join('\n');break;case'json':i='json',n=JSON.stringify(r,null,4)}const s=new Blob([n],{type:t[e]}),c=URL.createObjectURL(s),l=document.createElement('a');l.href=c,l.download=`ChatGPT_Dump_${(new Date).getTime()}.${i}`,l.style.display='none',l.click(),l.remove(),URL.revokeObjectURL(c)}();"
-                    >Save GPTChat as JSON</a
-                >
-            </li>
+            <li>User: Only the user messages are downloaded.</li>
+            <li>AI: Only the AI messages are downloaded.</li>
+        </ul>
+
+        <hr />
+
+        <h2>Text Structure</h2>
+        <p>
+            If you choose the Text file type, keep in mind that it has the
+            simplest structure, so it is easy to understand and it simulates a
+            conversation over a notepad.
+        </p>
+        <p>Here's an example:</p>
+
+        <div class="code-block">
+            User: Write a poem of a bee and a bear. Make it simple for a five
+            year old child to understand. <br />
+            AI: Once upon a time, in a forest so green Lived a bee and a bear,
+            as happy as could be The bee buzzed and hummed, as she flew through
+            the air Gathering nectar and pollen, to make honey so fair The bear
+            roamed and wandered, through the trees and the streams Searching for
+            berries and honey, to fulfill all his dreams One day, the bee and
+            the bear, met by chance They looked at each other, and decided to
+            dance They twirled and they twirled, to the beat of the sun The bee
+            and the bear, having so much fun They danced and they danced, until
+            the day was done And went their separate ways, until the next day's
+            fun.
+        </div>
+
+        <p>
+            Each message starts with a new line followed by the template:
+            <kbd>Sender: Content</kbd>. And the message can take more than one
+            line to complete. So keep that in mind if you tend to use this file
+            type as the main for working on. JSON and CSV are better for
+            handling this situation.
+        </p>
+
+        <h2>JSON Structure</h2>
+        <p>
+            The JSON structure holds each message with three properties:
+            <kbd>index</kbd>, <kbd>sender</kbd> and <kbd>content</kbd>.
+        </p>
+        <ul>
+            <li>The index property is the message position on the list.</li>
+            <li>The sender property is who send the message.</li>
+            <li>The content property is the actual message content.</li>
+        </ul>
+
+        <div class="code-block">
+            [ { "index": 0, "sender": "User", "content": "Write a poem of a bee
+            and a bear. Make it simple for a five year old child to understand."
+            }, { "index": 1, "sender": "AI", "content": "Once upon a time, in a
+            forest so green\nLived a bee and a bear, as happy as could beThe bee
+            buzzed and hummed, as she flew through the air\nGathering nectar and
+            pollen, to make honey so fairThe bear roamed and wandered, through
+            the trees and the streams\nSearching for berries and honey, to
+            fulfill all his dreamsOne day, the bee and the bear, met by
+            chance\nThey looked at each other, and decided to danceThey twirled
+            and they twirled, to the beat of the sun\nThe bee and the bear,
+            having so much funThey danced and they danced, until the day was
+            done\nAnd went their separate ways, until the next day's fun." } ]
+        </div>
+
+        <h2>CSV Structure</h2>
+        <p>
+            The CSV structure, just like JSON, holds three columns:
+            <kbd>Index</kbd>, <kbd>Sender</kbd> and <kbd>Message</kbd> (this is
+            the only exception when comparing to JSON).
+        </p>
+        <ul>
+            <li>The Index column is the message position on the list.</li>
+            <li>The Sender column is who send the message.</li>
+            <li>The Message column is the actual message content.</li>
+        </ul>
+
+        <div class="code-block">
+            Index, Sender, Message <br />
+            0, User, "Write a poem of a bee and a bear. Make it simple for a
+            five year old child to understand." <br />
+            1, AI, "Once upon a time, in a forest so green Lived a bee and a
+            bear, as happy as could beThe bee buzzed and hummed, as she flew
+            through the air Gathering nectar and pollen, to make honey so
+            fairThe bear roamed and wandered, through the trees and the streams
+            Searching for berries and honey, to fulfill all his dreamsOne day,
+            the bee and the bear, met by chance They looked at each other, and
+            decided to danceThey twirled and they twirled, to the beat of the
+            sun The bee and the bear, having so much funThey danced and they
+            danced, until the day was done And went their separate ways, until
+            the next day's fun."
+        </div>
+
+        <hr />
+
+        <h2>Downloads</h2>
+        <p>
+            Whenever you download a file, it's filename will always come in the
+            pattern <kbd>ChatGPT_Dump_Time</kbd> (where <em>Time</em> is the
+            current date and time in miliseconds) followed by the file type
+            extension. For example:
+        </p>
+        <ul>
+            <li>ChatGPT_Dump_1670464772547.txt</li>
+            <li>ChatGPT_Dump_1670462387337.json</li>
+            <li>ChatGPT_Dump_1670493464746.csv</li>
         </ul>
     </body>
 </html>
