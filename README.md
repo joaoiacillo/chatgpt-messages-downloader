@@ -1,4 +1,4 @@
-# ChatGPT Messages Downloader
+# ChatGPT Messages Downloader (V2.0)
 
 Download your ChatGPT messages for later use as text or JSON format. It is
 simple as a click of a button.
