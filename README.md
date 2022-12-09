@@ -5,11 +5,9 @@ simple as a click of a button.
 
 ## How to use it
 
-In order to use this script, you must drag one of the links (or both of
-them) from the project website, [which you can visit clicking in here](https://joaoiacillo.github.io/chatgpt-messages-downloader/),
-to your favorites bar. These links contains the code in JavaScript
-(in a minified format to fit better) to obtain and download your GPT chat
-history.
+Open the offical proejct website clicking
+[here](https://joaoiacillo.github.io/chatgpt-messages-downloader/)
+and read our official documentation in there!
 
 The source code can be found in the `script.js` file in this repository.
 
